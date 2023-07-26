@@ -1,6 +1,6 @@
 const express = require("express"),
     path = require("path"),
-    { frameworks } = require("./views/partials")
+    { frameworks, search } = require("./views/partials")
 app = express();
 
 const PORT = process.env.PORT || 8001;
@@ -12,6 +12,7 @@ app.use(express.static(path.join(__dirname, "public")))
     .get("/", (req, res) => res.render("index"))
     .get("/search", (req, res) => res.render("foods"))
     .get("/frameworks", (req, res) => frameworks(res, req))
+    .get("/book", (req, res) => search(res, req))
     .listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 
 
