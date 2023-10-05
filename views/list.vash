@@ -1,0 +1,22 @@
+<table>
+    <tr>
+        <th>Course Id</th>
+        <th>Code</th>
+        <th>Title</th>
+        <th>Credit Hrs.</th>
+        <th>Semester</th>
+    </tr>
+    @model.courses.forEach(function(course){
+        <tr>
+            <td>@course.courseid</td>
+            <td>@course.code</td>
+            <td>
+                <a href="#" hx-post="/edit" hx-trigger="click" hx-swap="innerHTML" hx-target="#edit"  hx-vars='{"courseid": @course.courseid}'>
+                    @course.title   
+                </a>
+            </td>
+            <td>@course.crhr</td>
+            <td>@course.semester</td>
+        </tr>
+    })
+</table>

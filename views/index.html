@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.5" integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" crossorigin="anonymous"></script>
+    <title>HTMX</title>
+    <style>
+        html{
+            font-family: 'Segoe UI';
+            font-size: 13px;
+        }
+        table, th, tr, td{
+            border-collapse: collapse;
+            border: 1px solid #d3d3d3;
+        }
+        .col{
+            display: inline-block;
+            vertical-align: top;
+            width: 48%;
+        }
+        #edit > table > tbody > tr > th{
+            text-align: right;
+        }
+    </style>
+</head>
+<body hx-get="/list" hx-trigger="load" hx-swap="innerHTML" hx-target="#list">
+    <div id="list" class="col"></div>
+    <div id="edit" class="col">
+        
+    </div>
+</body>
+</html>

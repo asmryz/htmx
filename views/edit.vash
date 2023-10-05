@@ -1,0 +1,31 @@
+<table>
+    <tr>
+        <th>Course Id : </th>
+        <td><input type="text" name="courseid" value="@model.course.courseid" readonly id="courseid"></td>
+    </tr>
+    <tr>
+        <th>Code : </th>
+        <td><input type="text" name="code" value="@model.course.code" id="code"></td>
+    </tr>
+    <tr>
+        <th>Title : </th>
+        <td><textarea name="title" cols="30" rows="2" id="title">@model.course.title</textarea></td>
+    </tr>
+    <tr>
+        <th>Credit Hrs : </th>
+        <td><input type="text" name="crhr"  value="@model.course.crhr" id="crhr"></td>
+    </tr>
+    <tr>
+        <th>Semester : </th>
+        <td><input type="text" name="semester"  value="@model.course.semester" id="semester"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="button" name="Save" value="Save" 
+            hx-get="/save" 
+            hx-trigger="click" 
+            hx-include="#courseid, #code, #title, #crhr, #semester"
+            hx-swap="beforeend"
+            hx-target="#edit"
+        ></td>
+    </tr>
+</table>
