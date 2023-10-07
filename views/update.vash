@@ -1,0 +1,22 @@
+<tr id="id-@model.course.courseid">
+    <td>@model.course.courseid</td>
+    <td>@model.course.code</td>
+    <td>
+        <a
+            href="#"
+            hx-post="/edit"
+            hx-trigger="click"
+            hx-swap="innerHTML"
+            hx-target="#edit"
+            hx-vars='{"courseid": @model.course.courseid}'
+        >
+            @model.course.title
+        </a>
+    </td>
+    <td>@model.course.crhr</td>
+    <td>@model.course.semester</td>
+</tr>
+
+<div id="edit" class="col" hx-swap-oob="true"></div>
+
+<div id="update" style="display: inline-block; vertical-align: top" hx-swap-oob="true">This is from hx-swap-oob</div>

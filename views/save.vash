@@ -1,0 +1,5 @@
+<pre>
+    @model.data
+</pre>
+
+<div id="update" style="display: inline-block; vertical-align: top" hx-swap-oob="true">This is from hx-swap-oob</div>
