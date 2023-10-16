@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="htmx-config" content='{"useTemplateFragments":"true"}' />
+        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        <script
+            src="https://unpkg.com/htmx.org@1.9.5"
+            integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO"
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            table,
+            th,
+            tr,
+            td {
+                border-collapse: collapse;
+                border: 1px solid #808080;
+            }
+            .flex-container {
+                display: flex;
+                flex-wrap: nowrap;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                flex-grow: 2;
+                background-color: #f1f1f1;
+                /* width: 100px; */
+                margin: 5px;
+                /* text-align: center; */
+                /* line-height: 75px;
+                font-size: 30px; */
+            }
+            .col {
+                display: inline-block;
+                width: 49%;
+                vertical-align: top;
+            }
+        </style>
+        <title>Data Sheet</title>
+    </head>
+    <body>
+        <div class="col">
+            <form hx-get="/student/regno" hx-target="#student" hx-swap="innerHTML">
+                <div style="display: flex; padding: 6px">
+                    <div style="font-weight: bold">Reg No :</div>
+                    <div>
+                        <input
+                            type="text"
+                            name="regno"
+                            hx-trigger="click, keydown[enterKey] from:body"
+                            placeholder="regno"
+                            required
+                        />
+                    </div>
+                </div>
+                <div id="student"></div>
+            </form>
+        </div>
+        <div class="col" id="reg">col2</div>
+    </body>
+</html>

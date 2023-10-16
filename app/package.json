@@ -1,0 +1,21 @@
+{
+    "name": "datasheet",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "0.19.2",
+        "express": "^4.18.2",
+        "mongoose": "^7.6.0",
+        "vash": "^0.13.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    }
+}

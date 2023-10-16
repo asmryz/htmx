@@ -1,0 +1,25 @@
+GET http://localhost:9001/api/students/1112130
+
+###
+
+GET http://localhost:9001/api/semetser/courses/1112102/1
+
+###
+
+GET http://localhost:9001/api/registrations/1112140
+
+###
+
+GET http://localhost:9001/api/students/gpa/1112101
+
+###
+
+POST http://localhost:9001/api/courses/register 
+Content-Type: application/json
+
+{
+  "regno": "1112140",
+  "semno": "2", 
+  "courseid": [ "4", "5" ]  
+}
+
